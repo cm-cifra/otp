@@ -1,11 +1,24 @@
 {
   "name": "thrives",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
   "private": true,
+  "description": "<p align=\"center\">\r   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"120\" alt=\"Nest Logo\" /></a>\r </p>",
+  "homepage": "https://github.com/cm-cifra/otp#readme",
+  "bugs": {
+    "url": "https://github.com/cm-cifra/otp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cm-cifra/otp.git"
+  },
   "license": "UNLICENSED",
-  "scripts": { 
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
