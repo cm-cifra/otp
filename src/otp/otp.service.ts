@@ -21,13 +21,62 @@ export class OtpService {
   const otp = this.generateOtp();
 
   await this.transporter.sendMail({
-    from: `"OTP Service" <${process.env.GMAIL_USER}>`,
+    from: `"TheThrives" <${process.env.GMAIL_USER}>`,
     to: email,
     subject: 'Your OTP Code',
     html: `
-      <h2>Your OTP Code</h2>
-      <p><b>${otp}</b></p>
-      <p>This code will expire in 5 minutes.</p>
+      <div style="background:#f4f6f8;padding:30px;font-family:Arial,Helvetica,sans-serif">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;margin:auto;background:#ffffff;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.08)">
+        
+        <tr>
+          <td style="padding:25px;text-align:center">
+            <img 
+              src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t39.30808-6/513987837_1264761662327387_4546765657327074072_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=RfuWVh9C_K8Q7kNvwG0tkvW&_nc_oc=AdlrzybMpYvyZy5sOQCZAfr87s_PJMY4ier3jiJ2kaN4vtPGEBO3poRniW2gD62Fq-g&_nc_zt=23&_nc_ht=scontent.fcgy1-1.fna&_nc_gid=ZtWjgwj3F4SsYD6YUQ5Svw&oh=00_Afkzsh30EcLtHDN-hhqL45WsAbWKc-Tf8uqvqW-CQ1eaOw&oe=694A6256"
+              alt="Thrives Logo"
+              width="80"
+              style="margin-bottom:10px"
+            />
+            <h2 style="margin:0;color:#111">Verify Your Email</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0 25px 20px;text-align:center;color:#555;font-size:14px">
+            Use the verification code below to continue.
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center;padding:10px 25px">
+            <div style="
+              font-size:28px;
+              letter-spacing:6px;
+              font-weight:bold;
+              background:#f0f2f5;
+              padding:15px;
+              border-radius:8px;
+              color:#000;
+            ">
+              ${otp}
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px 25px;text-align:center;font-size:13px;color:#777">
+            This code expires in <b>5 minutes</b>.<br />
+            If you didn’t request this, please ignore this email.
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:15px;text-align:center;font-size:12px;color:#aaa;border-top:1px solid #eee">
+            © ${new Date().getFullYear()} Thrives. All rights reserved.
+          </td>
+        </tr>
+
+      </table>
+    </div>
     `,
   });
 
